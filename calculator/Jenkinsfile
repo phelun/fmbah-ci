@@ -1,0 +1,52 @@
+#!/usr/bin/env groovy
+
+// Beautify display
+def seperator60 = '\u2739' * 60
+def seperator20 = '\u2739' * 20
+
+
+node('builder-lab'){
+      echo "${seperator60}\n${seperator20} Clone repo to workspace \n${seperator60}"
+      stage('Repo Pull') {
+          checkout scm 
+      }
+   
+      echo "${seperator60}\n${seperator20} Build And Integrate \n${seperator60}"
+      stage('Build App'){
+          dir('calculator'){
+            sh './gradlew build'
+          }  
+      }
+      
+      echo "${seperator60}\n${seperator20} Build And Unit Test \n${seperator60}"
+      stage('Test App'){
+        dir('calculator'){
+            sh './gradlew test' 
+        }
+      }
+      
+      echo "${seperator60}\n${seperator20} Build And Code Coverage \n${seperator60}"
+      stage('Code Coverage App'){
+        dir('calculator'){
+            sh './gradlew jacocoTestReport' 
+            sh './gradlew jacocoTestCoverageVerification' 
+        } 
+      }
+      
+      echo "${seperator60}\n${seperator20} Docker in docker build \n${seperator60}"
+      stage('Building Docker'){
+        dir('calculator'){
+            sh 'docker build -t phelun/calc_cicd:2.0 -f Dockerfile .'
+        }
+      }
+
+      stage("Docker login") {
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh "docker login --username $USERNAME --password $PASSWORD"
+        }
+      }
+
+      stage("Docker push") {
+            sh "docker push phelun/calc_cicd:2.0" 
+      }
+}
