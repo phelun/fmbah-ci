@@ -7,6 +7,12 @@ def job_id      = "${env.BUILD_ID}"
 
 
 node('jenkins_builder'){
+
+      stage("Prepare Workspace") {
+            deleteDir()
+            checkout scm
+      }
+
       echo "${seperator60}\n${seperator20} Clone repo to workspace \n${seperator60}"
       stage('Repo Pull') {
           checkout scm 
