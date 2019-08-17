@@ -24,7 +24,7 @@ node('jenkins_builder'){
       stage("AWS authentication") {
         withCredentials([usernamePassword(credentialsId: 'cicd-token', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID' )]){
           dir('wordpress-app'){
-            sh "aws cp *.tar.gz s3://vps-state/cutom-helm-charts"
+            sh "aws s3 cp *.tar.gz s3://vps-state/cutom-helm-charts"
           }
         }
       }
