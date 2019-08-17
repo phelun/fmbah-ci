@@ -1,0 +1,31 @@
+#!/usr/bin/env groovy
+
+// Beautify display
+def seperator60 = '\u2739' * 60
+def seperator20 = '\u2739' * 20
+def job_id      = "${env.BUILD_ID}"
+
+
+node('jenkins_builder'){
+      echo "${seperator60}\n${seperator20} Clone repo to workspace \n${seperator60}"
+      stage('Repo Pull') {
+          checkout scm 
+      }
+   
+      echo "${seperator60}\n${seperator20} Build Custom Chart \n${seperator60}"
+      stage('Build App'){
+          dir('wordpress-app'){
+            sh "tar -zcvf wordpress_${job_id}.tar.gz wordpress"
+          }  
+      }
+      
+      
+
+      stage("AWS authentication") {
+        withCredentials([usernamePassword(credentialsId: 'cicd-token', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID' )]){
+          dir('wordpress-app'){
+            sh "aws cp *.tar.gz s3://vps-state/cutom-helm-charts"
+          }
+        }
+      }
+}
