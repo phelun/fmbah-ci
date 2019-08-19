@@ -106,7 +106,7 @@ customHTAccessCM:
 # smtpUsername:
 # smtpProtocol:
 
-replicaCount: 5
+replicaCount: 15
 
 externalDatabase:
 ## All of these values are only used when mariadb.enabled is set to false
