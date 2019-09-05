@@ -1,16 +1,16 @@
-## Reference MEAN application 
+# Reference MEAN application 
 
 * Inspired by https://appdividend.com/2019/06/04/angular-8-tutorial-with-example-learn-angular-8-crud-from-scratch/
 
-## Base tech
+# Base tech
 - MongoDb => v4.0.12  
 - Express => 
 - Angular 
 - NodeJs 
 
-## Setup Base Tech Stacks on Centos 7 
+# Setup Base Tech Stacks on Centos 7 
 
-# MongoDb 
+## MongoDb 
   - sudo cat > /etc/yum.repos.d/mongodb-org.repo
     ```
     [MongoDB]
@@ -26,7 +26,7 @@
   - mongod --version
   - ``` > show dbs; ```
 
-# NodeJs 
+## NodeJs 
   - yum install -y gcc-c++ make
   - sudo curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
   - sudo yum install -y nodejs
