@@ -1,16 +1,17 @@
-## Reference MEAN application 
+# Reference MEAN application 
 
 * Inspired by https://appdividend.com/2019/06/04/angular-8-tutorial-with-example-learn-angular-8-crud-from-scratch/
 
-## Base tech
+# Base tech
 - MongoDb => v4.0.12  
-- Express => 
-- Angular 
-- NodeJs 
+- Express => 4.17.1
+- Angular => 8.3.3
+- NodeJs  => 
+- git
 
-## Setup Base Tech Stacks on Centos 7 
+# Setup Base Tech Stacks on Centos 7 
 
-# MongoDb 
+## MongoDb 
   - sudo cat > /etc/yum.repos.d/mongodb-org.repo
     ```
     [MongoDB]
@@ -26,8 +27,8 @@
   - mongod --version
   - ``` > show dbs; ```
 
-# NodeJs 
-  - yum install -y gcc-c++ make
+## NodeJs 
+  - sudo yum install -y gcc-c++ make
   - sudo curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
   - sudo yum install -y nodejs
   - Check installed tools and version 
@@ -35,3 +36,16 @@
     node: v12.10.0
     npm: 6.10.3
     ```
+
+## Angular/CLI 
+  - sudo npm install -g @angular/cli  # Make sure you use sudo here 
+  - ng --version 
+    ```
+    Angular CLI: 8.3.3
+    ```
+  - 
+
+
+# Mean Stack Journey 
+  - ng serve --host 0.0.0.0 --port 4200 
+  - 
