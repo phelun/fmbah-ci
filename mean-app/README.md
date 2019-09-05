@@ -4,9 +4,10 @@
 
 # Base tech
 - MongoDb => v4.0.12  
-- Express => 
-- Angular 
-- NodeJs 
+- Express => 4.17.1
+- Angular => 8.3.3
+- NodeJs  => 
+- git
 
 # Setup Base Tech Stacks on Centos 7 
 
@@ -27,7 +28,7 @@
   - ``` > show dbs; ```
 
 ## NodeJs 
-  - yum install -y gcc-c++ make
+  - sudo yum install -y gcc-c++ make
   - sudo curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
   - sudo yum install -y nodejs
   - Check installed tools and version 
@@ -35,3 +36,16 @@
     node: v12.10.0
     npm: 6.10.3
     ```
+
+## Angular/CLI 
+  - sudo npm install -g @angular/cli  # Make sure you use sudo here 
+  - ng --version 
+    ```
+    Angular CLI: 8.3.3
+    ```
+  - 
+
+
+# Mean Stack Journey 
+  - ng serve --host 0.0.0.0 --port 4200 
+  - 
