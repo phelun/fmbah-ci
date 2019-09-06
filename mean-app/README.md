@@ -43,9 +43,5 @@
     ```
     Angular CLI: 8.3.3
     ```
-  - 
-
-
-# Mean Stack Journey 
+  - ng new 'projectname' 
   - ng serve --host 0.0.0.0 --port 4200 
-  - 
