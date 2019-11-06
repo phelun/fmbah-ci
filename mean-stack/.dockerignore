@@ -1,0 +1,4 @@
+#### Ignore some files that gets uploaded to image/container ###
+Dockerfile 
+.dockerignore 
+.git 

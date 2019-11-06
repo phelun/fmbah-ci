@@ -1,0 +1,22 @@
+// Project dependencies 
+
+{
+    "name": "ci-image-demo",
+    "version": "1.0.0",
+    "description": "CI mean demo",
+    "author": "FMBAH - phelun@yahoo.com",
+    "license": "MIT",
+    "main": "app.js",
+    "keywords": [
+        "nodejs",
+        "bootstrap",
+        "express"
+    ],
+    "dependencies": {
+        "express": "^4.16.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/phelun/fmbah-ci.git"
+    }
+}
