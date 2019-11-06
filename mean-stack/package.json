@@ -3,7 +3,7 @@
 {
     "name": "ci-image-demo",
     "version": "1.0.0",
-    "description": "CI mean demo",
+    "description": "CI mean-stack demo",
     "author": "FMBAH - phelun@yahoo.com",
     "license": "MIT",
     "main": "app.js",
