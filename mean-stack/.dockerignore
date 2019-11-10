@@ -1,5 +1,7 @@
 #### Ignore some files that gets uploaded to image/container ###
-Dockerfile 
 .dockerignore 
-.git 
+.gitignore
+node_modules
+npm-debug.log
+Dockerfile 
 
