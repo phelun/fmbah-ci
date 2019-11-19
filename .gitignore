@@ -80,3 +80,5 @@ mongod
 *.njsproj
 *.sln
 
+# Vagrant things 
+.vagrant 
