@@ -9,6 +9,7 @@
 // mongoose.connect(url, {useNewUrlParser: true});
 
 // Setting these values to dynamically pick values at runtime 
+const mongoose = require('mongoose');
 const {
     MONGO_USERNAME,
     MONGO_PASSWORD,
