@@ -1,0 +1,24 @@
+#
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Global declaration
+Vagrant.configure("2") do |config|
+
+  # Node MongDb
+  config.vm.define "mongodb" do |mongd|
+     mongd.vm.box = "centos/7"
+     mongd.ssh.insert_key = true
+     mongd.vm.synced_folder ".", "/vagrant", disabled: true
+     #mongd.vm.network "public_network", bridge: 'eth0'
+     mongd.vm.network "public_network", bridge: "Intel(R) 82579LM Gigabit Network Connection"
+     mongd.vm.hostname = "node-mongo-db-test"
+     mongd.vm.provider :virtualbox do |v|
+        v.memory =512
+        v.name = "node-mongo-db-test"
+     end
+     mongd.vm.provision :shell, path: "bootstrap.sh"
+  end
+end
+
+
