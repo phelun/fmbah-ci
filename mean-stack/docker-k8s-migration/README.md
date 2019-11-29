@@ -23,3 +23,11 @@ kubectl proxy --address='0.0.0.0' --disable-filter=true     # Allow for Remote D
 http://192.168.1.66:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=kube-system
 https://github.com/kubernetes/minikube/issues/877
 
+
+```
+In Unix systems the end of a line is represented with a line feed (LF). In windows a line is represented with a carriage return (CR) and a line feed (LF) thus (CRLF). when you get code from git that was uploaded from a unix system they will only have an LF.
+
+If you want to turn this warning off, type this in the git command line
+
+git config core.autocrlf true
+```
