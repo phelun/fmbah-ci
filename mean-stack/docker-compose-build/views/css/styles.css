@@ -19,7 +19,7 @@ p {
 
 .jumbotron {
     /* background: #0048CD;  #TODO BodyBackground vs JumboTron BG   */
-    background: #34495E;
+    background: rgb(20, 33, 46);
     color: white;
     text-align: center;
 }
