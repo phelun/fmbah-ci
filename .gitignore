@@ -85,4 +85,4 @@ mongod
 
 # Paroli 
 .env
-secret.yaml 
+# secret.yaml 
