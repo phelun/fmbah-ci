@@ -1,0 +1,25 @@
+{
+    "name": "fmbah-node-ci",
+    "version": "1.0.0",
+    "description": "fmbah mean stack ci",
+    "author": "FMBAH - phelun@yahoo.com",
+    "license": "MIT",
+    "main": "app.js",
+    "keywords": [
+        "nodejs",
+        "bootstrap",
+        "express"
+    ],
+    "dependencies": {
+        "ejs": "^2.7.3",
+        "express": "^4.17.1",
+        "mongoose": "^5.7.12"
+    },
+    "devDependencies": {
+        "nodemon": "2.0.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/phelun/fmbah-ci.git"
+    }
+}

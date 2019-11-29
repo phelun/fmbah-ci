@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\Fenerbahce\Documents\bin\kompose.exe convert
+    kompose.version: 1.19.0 (f63a961c)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nodejs
+  name: nodejs
+spec:
+  type: NodePort
+  ports: 
+  - name: "80"
+    port: 80
+    targetPort: 8080
+  selector:
+    io.kompose.service: nodejs
+status:
+  loadBalancer: {}

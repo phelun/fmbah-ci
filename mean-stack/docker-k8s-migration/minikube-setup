@@ -1,9 +1,0 @@
-## 
-https://www.xtivia.com/minikube-install-guide-centos/
-
-Logon to anbible 66 box 
-minikube status 
-minikube start # If not started 
-kubectl proxy --address='0.0.0.0' --disable-filter=true     # Allow for Remote Dashboard access 
-http://192.168.1.66:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=kube-system
-https://github.com/kubernetes/minikube/issues/877

@@ -1,0 +1,35 @@
+version: '3'
+
+services: 
+  nodejs: 
+    image: phelun/compose-to-k8s-finale-image                                         # Gives The Image|Container A Name     
+    container_name: nodejs 
+    restart: always
+    env_file: .env                                       # Defines Source Of Environment Variables 
+    environment:                                         # Corrrelates with .env file to fetch values for the Env Vars 
+      - MONGO_USERNAME=$MONGO_USERNAME
+      - MONGO_PASSWORD=$MONGO_PASSWORD
+      - MONGO_HOSTNAME=db 
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_DB=$MONGO_DB
+    ports: 
+      - "80:8080"
+    networks: 
+      - app-network
+  db:
+    image: mongo:4.1.8-xenial
+    container_name: db
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+    volumes:  
+      - dbdata:/data/db                                 # The named volume dbdata will persist the data stored in Mongo’s default data directory, /data/db. This will ensure that you don’t lose data in cases where you stop or remove containers
+    networks:
+      - app-network  
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+  
